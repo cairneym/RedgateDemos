@@ -2,10 +2,9 @@ SET QUOTED_IDENTIFIER ON
 GO
 SET ANSI_NULLS ON
 GO
-
 CREATE VIEW [dbo].[CityCountry]
 AS
-SELECT     Application.Cities.CityName, Application.Countries.CountryName
+SELECT     Application.Cities.CityName, Application.Countries.CountryName, Application.Countries.FormalName
 FROM        Application.Cities INNER JOIN
                   Application.StateProvinces ON Application.Cities.StateProvinceID = Application.StateProvinces.StateProvinceID INNER JOIN
                   Application.Countries ON Application.StateProvinces.CountryID = Application.Countries.CountryID
@@ -91,22 +90,22 @@ Begin DesignProperties =
             DisplayFlags = 280
             TopColumn = 0
          End
-         Begin Table = "Countries (Application)"
-            Begin Extent = 
-               Top = 14
-               Left = 706
-               Bottom = 169
-               Right = 970
-            End
-            DisplayFlags = 280
-            TopColumn = 0
-         End
          Begin Table = "StateProvinces (Application)"
             Begin Extent = 
                Top = 16
                Left = 374
                Bottom = 171
                Right = 638
+            End
+            DisplayFlags = 280
+            TopColumn = 0
+         End
+         Begin Table = "Countries (Application)"
+            Begin Extent = 
+               Top = 14
+               Left = 706
+               Bottom = 169
+               Right = 970
             End
             DisplayFlags = 280
             TopColumn = 0
