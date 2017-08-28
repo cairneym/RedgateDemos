@@ -4,7 +4,7 @@ SET ANSI_NULLS ON
 GO
 CREATE VIEW [dbo].[CityCountry]
 AS
-SELECT     Application.Cities.CityName, Application.Countries.CountryName, Application.Countries.FormalName
+SELECT     Application.Cities.CityName, Application.Countries.CountryName
 FROM        Application.Cities INNER JOIN
                   Application.StateProvinces ON Application.Cities.StateProvinceID = Application.StateProvinces.StateProvinceID INNER JOIN
                   Application.Countries ON Application.StateProvinces.CountryID = Application.Countries.CountryID
